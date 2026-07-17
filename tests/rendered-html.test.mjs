@@ -30,8 +30,8 @@ test("renders the Harding AI exploration experience", async () => {
 
 test("ships direct, accessible image assets and career mappings", async () => {
   const html = await (await render()).text();
-  assert.match(html, /src="\/ai-bison\.jpg" alt="Harding AI Bison"/);
-  assert.match(html, /src="\/joe-faith\.png" alt="Joe Faith, AI program guide"/);
+  assert.match(html, /src="\.\/ai-bison\.jpg" alt="Harding AI Bison"/);
+  assert.match(html, /src="\.\/joe-faith\.png" alt="Joe Faith, AI program guide"/);
   assert.match(html, /WHERE THE DEGREE BUILDS IT/);
   assert.match(html, /YOUR FIRST MISSION/);
   assert.match(html, /WHAT COULD YOU BUILD\?/);

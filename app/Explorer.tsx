@@ -53,7 +53,7 @@ export function Explorer() {
 
       <header className="nav shell">
         <a className="brand" href="#top" aria-label="Harding AI home">
-          <img src="/ai-bison.jpg" alt="Harding AI Bison" width="68" height="48" />
+          <img src="./ai-bison.jpg" alt="Harding AI Bison" width="68" height="48" />
           <span><b>HARDING</b><small>ARTIFICIAL INTELLIGENCE</small></span>
         </a>
         <button className="menu" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen}>MENU</button>
@@ -84,7 +84,7 @@ export function Explorer() {
           <div className="orbit orbit-a" />
           <div className="orbit orbit-b" />
           <div className="core">
-            <img src="/ai-bison.jpg" alt="Harding AI Bison logo" width="290" height="180" />
+            <img src="./ai-bison.jpg" alt="Harding AI Bison logo" width="290" height="180" />
           </div>
           <span className="node node-a">MACHINE LEARNING</span>
           <span className="node node-b">ETHICAL AI</span>
@@ -181,7 +181,7 @@ export function Explorer() {
       <section className="guide" id="guide">
         <div className="shell guide-grid">
           <div className="portrait-wrap">
-            <div className="portrait-frame"><img src="/joe-faith.png" alt="Joe Faith, AI program guide" width="640" height="720" /></div>
+            <div className="portrait-frame"><img src="./joe-faith.png" alt="Joe Faith, AI program guide" width="640" height="720" /></div>
             <span className="portrait-label">HUMAN GUIDANCE<br />MEETS AI AMBITION</span>
           </div>
           <div className="guide-copy">
@@ -199,7 +199,7 @@ export function Explorer() {
 
       <footer>
         <div className="shell footer-grid">
-          <div className="brand"><img src="/ai-bison.jpg" alt="" width="68" height="48" /><span><b>HARDING</b><small>ARTIFICIAL INTELLIGENCE</small></span></div>
+          <div className="brand"><img src="./ai-bison.jpg" alt="" width="68" height="48" /><span><b>HARDING</b><small>ARTIFICIAL INTELLIGENCE</small></span></div>
           <p>Build intelligently.<br />Lead faithfully.</p>
           <div><a href="https://www.harding.edu" target="_blank" rel="noreferrer">Harding University ↗</a><a href="https://catalog.harding.edu/preview_program.php?catoid=4&poid=2261" target="_blank" rel="noreferrer">Official catalog ↗</a></div>
         </div>
