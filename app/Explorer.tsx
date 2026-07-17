@@ -187,8 +187,11 @@ export function Explorer() {
           <div className="guide-copy">
             <p className="section-kicker">YOUR GUIDE TO THE FRONTIER</p>
             <h2>You won’t navigate<br />the future alone.</h2>
-            <p>Big ideas need personal guidance. Connect with Joe Faith to talk through the AI major, the skills you’ll build, and the opportunities you want to pursue.</p>
-            <div className="guide-name"><strong>Joe Faith</strong><span>AI EDUCATOR · DATA SCIENTIST · STUDENT ADVOCATE</span></div>
+            <p>Big ideas need personal guidance. Connect with Dr. Joe Faith to talk through the AI major, the skills you’ll build, and the opportunities you want to pursue.</p>
+            <div className="guide-name">
+              <strong>Joe Faith, D.Eng.</strong>
+              <span>ASSISTANT PROFESSOR OF COMPUTER SCIENCE &amp; ARTIFICIAL INTELLIGENCE · HARDING UNIVERSITY</span>
+            </div>
             <a className="primary" href="mailto:jfaith@harding.edu">Start a conversation <span>↗</span></a>
           </div>
         </div>
