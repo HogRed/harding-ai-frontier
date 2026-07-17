@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useMemo, useState } from "react";
 
 type Track = "Software" | "Artificial Intelligence" | "Mathematics";
@@ -21,6 +20,7 @@ const courses: Record<Track, { code: string; name: string; hours: number; tag: s
     { code: "COMP 4299", name: "Machine Learning", hours: 3, tag: "Advanced" },
     { code: "COMP 4300", name: "Knowledge, Search & Reasoning", hours: 3, tag: "Intelligence" },
     { code: "COMP 4380", name: "AI & Computing Ethics", hours: 3, tag: "Purpose" },
+    { code: "COMP 4390", name: "Computing Seminar", hours: 1, tag: "Connect" },
     { code: "COMP 4400", name: "Software Development Project", hours: 3, tag: "Capstone" },
     { code: "IS 2200", name: "Artificial Intelligence in Business", hours: 3, tag: "Impact" },
   ],
@@ -34,10 +34,10 @@ const courses: Record<Track, { code: string; name: string; hours: number; tag: s
 };
 
 const careers = [
-  { title: "AI Engineer", fit: "I want to build intelligent products.", skills: ["Deep learning", "Software engineering", "Generative AI"] },
-  { title: "Machine Learning Engineer", fit: "I want models to work in the real world.", skills: ["Algorithms", "Data structures", "ML systems"] },
-  { title: "Data Scientist", fit: "I want to turn data into decisions.", skills: ["Probability", "Analytics", "Machine learning"] },
-  { title: "Responsible AI Lead", fit: "I want technology to serve people well.", skills: ["AI ethics", "Business", "Reasoning"] },
+  { title: "AI Engineer", fit: "Build intelligent products that can see, reason, and create.", skills: ["Deep learning", "Software engineering", "Generative AI"], degree: ["COMP 3200 · Deep Learning", "COMP 4200 · Vision & Generative AI", "COMP 4400 · Development Project"], project: "Prototype an AI study coach or multimodal campus assistant." },
+  { title: "Machine Learning Engineer", fit: "Turn promising models into reliable systems people can use.", skills: ["Algorithms", "Data structures", "ML systems"], degree: ["COMP 2450 · Data Structures", "COMP 3490 · Applied Algorithms", "COMP 4299 · Machine Learning"], project: "Train and deploy a model that predicts a useful real-world outcome." },
+  { title: "Data Scientist", fit: "Find the signal in complex data and turn it into decisions.", skills: ["Probability", "Analytics", "Machine learning"], degree: ["MATH 3200 · Probability", "IS 4300 · Data Analytics", "COMP 2200 · Intro to Machine Learning"], project: "Discover and explain a pattern hidden in a public dataset." },
+  { title: "Responsible AI Lead", fit: "Guide organizations toward AI that is capable, accountable, and human-centered.", skills: ["AI ethics", "Business", "Reasoning"], degree: ["COMP 4380 · AI & Computing Ethics", "IS 2200 · AI in Business", "COMP 4300 · Knowledge & Reasoning"], project: "Create an AI impact assessment for a high-stakes application." },
 ];
 
 export function Explorer() {
@@ -53,7 +53,7 @@ export function Explorer() {
 
       <header className="nav shell">
         <a className="brand" href="#top" aria-label="Harding AI home">
-          <Image src="/ai-bison.jpg" alt="Harding AI Bison" width={68} height={48} priority />
+          <img src="/ai-bison.jpg" alt="Harding AI Bison" width="68" height="48" />
           <span><b>HARDING</b><small>ARTIFICIAL INTELLIGENCE</small></span>
         </a>
         <button className="menu" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen}>MENU</button>
@@ -84,7 +84,7 @@ export function Explorer() {
           <div className="orbit orbit-a" />
           <div className="orbit orbit-b" />
           <div className="core">
-            <Image src="/ai-bison.jpg" alt="Harding AI Bison logo" width={290} height={180} priority />
+            <img src="/ai-bison.jpg" alt="Harding AI Bison logo" width="290" height="180" />
           </div>
           <span className="node node-a">MACHINE LEARNING</span>
           <span className="node node-b">ETHICAL AI</span>
@@ -104,6 +104,15 @@ export function Explorer() {
             ["02", "Train the future", "Move from machine learning fundamentals to deep learning, computer vision, and generative AI."],
             ["03", "Lead with purpose", "Explore business impact and computing ethics alongside the technical power to make ideas real."],
           ].map(([n, title, text]) => <article className="feature" key={n}><span>{n}</span><h3>{title}</h3><p>{text}</p></article>)}
+        </div>
+        <div className="build-strip">
+          <div><p className="section-kicker">WHAT COULD YOU BUILD?</p><h3>Turn curiosity into a portfolio.</h3></div>
+          <div className="build-ideas">
+            <span>VISION SYSTEM</span>
+            <span>AI STUDY COACH</span>
+            <span>SMART BUSINESS TOOL</span>
+            <span>RESPONSIBLE AI AUDIT</span>
+          </div>
         </div>
       </section>
 
@@ -160,7 +169,11 @@ export function Explorer() {
             <blockquote>“{careers[career].fit}”</blockquote>
             <small>YOUR HARDING AI TOOLKIT</small>
             <div className="skill-pills">{careers[career].skills.map((skill) => <span key={skill}>{skill}</span>)}</div>
-            <div className="match"><div><i /></div><strong>High<br /><small>PROGRAM FIT</small></strong></div>
+            <div className="degree-map">
+              <small>WHERE THE DEGREE BUILDS IT</small>
+              {careers[career].degree.map((course) => <div key={course}><i />{course}</div>)}
+            </div>
+            <div className="first-mission"><span>YOUR FIRST MISSION</span><strong>{careers[career].project}</strong></div>
           </div>
         </div>
       </section>
@@ -168,7 +181,7 @@ export function Explorer() {
       <section className="guide" id="guide">
         <div className="shell guide-grid">
           <div className="portrait-wrap">
-            <div className="portrait-frame"><Image src="/joe-faith.png" alt="Joe Faith, AI program guide" width={640} height={720} /></div>
+            <div className="portrait-frame"><img src="/joe-faith.png" alt="Joe Faith, AI program guide" width="640" height="720" /></div>
             <span className="portrait-label">HUMAN GUIDANCE<br />MEETS AI AMBITION</span>
           </div>
           <div className="guide-copy">
@@ -183,7 +196,7 @@ export function Explorer() {
 
       <footer>
         <div className="shell footer-grid">
-          <div className="brand"><Image src="/ai-bison.jpg" alt="" width={68} height={48} /><span><b>HARDING</b><small>ARTIFICIAL INTELLIGENCE</small></span></div>
+          <div className="brand"><img src="/ai-bison.jpg" alt="" width="68" height="48" /><span><b>HARDING</b><small>ARTIFICIAL INTELLIGENCE</small></span></div>
           <p>Build intelligently.<br />Lead faithfully.</p>
           <div><a href="https://www.harding.edu" target="_blank" rel="noreferrer">Harding University ↗</a><a href="https://catalog.harding.edu/preview_program.php?catoid=4&poid=2261" target="_blank" rel="noreferrer">Official catalog ↗</a></div>
         </div>
