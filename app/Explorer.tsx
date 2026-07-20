@@ -40,6 +40,53 @@ const careers = [
   { title: "Responsible AI Lead", fit: "Guide organizations toward AI that is capable, accountable, and human-centered.", skills: ["AI ethics", "Business", "Reasoning"], degree: ["COMP 4380 · AI & Computing Ethics", "IS 2200 · AI in Business", "COMP 4300 · Knowledge & Reasoning"], project: "Create an AI impact assessment for a high-stakes application." },
 ];
 
+const projectLaunchpads = [
+  {
+    number: "01",
+    title: "Vision System",
+    mission: "Teach a model to recognize campus landmarks, classroom objects, plants, or recyclable materials.",
+    deliverable: "Image demo + accuracy report + failure-case analysis",
+    resources: [
+      { label: "TensorFlow image classification", href: "https://www.tensorflow.org/tutorials/images/classification", type: "BUILD" },
+      { label: "TensorFlow datasets catalog", href: "https://www.tensorflow.org/datasets/catalog/overview", type: "DATA" },
+      { label: "Microsoft Learn vision module", href: "https://learn.microsoft.com/en-us/training/modules/intro-computer-vision-tensorflow/", type: "LEARN" },
+    ],
+  },
+  {
+    number: "02",
+    title: "AI Study Coach",
+    mission: "Create a course assistant that answers from approved notes, cites its sources, and knows when to say it does not know.",
+    deliverable: "Working chat + cited answers + evaluation questions",
+    resources: [
+      { label: "OpenAI developer quickstart", href: "https://platform.openai.com/docs/quickstart/make-your-first-api-request", type: "BUILD" },
+      { label: "Streamlit chat app tutorial", href: "https://docs.streamlit.io/develop/tutorials/chat-and-llm-apps/build-conversational-apps", type: "UI" },
+      { label: "Streamlit LLM quickstart", href: "https://docs.streamlit.io/develop/tutorials/chat-and-llm-apps/llm-quickstart", type: "EXTEND" },
+    ],
+  },
+  {
+    number: "03",
+    title: "Smart Business Tool",
+    mission: "Use real data to predict demand, identify customer groups, or help an organization make a better decision.",
+    deliverable: "Interactive dashboard + prediction + decision limits",
+    resources: [
+      { label: "Scikit-learn getting started", href: "https://scikit-learn.org/stable/getting_started.html", type: "BUILD" },
+      { label: "Streamlit data app tutorial", href: "https://docs.streamlit.io/get-started/tutorials/create-an-app", type: "UI" },
+      { label: "UCI dataset repository", href: "https://archive.ics.uci.edu/", type: "DATA" },
+    ],
+  },
+  {
+    number: "04",
+    title: "Responsible AI Audit",
+    mission: "Investigate an existing model for unequal errors, weak data coverage, explainability gaps, or foreseeable misuse.",
+    deliverable: "Audit brief + group metrics + recommended safeguards",
+    resources: [
+      { label: "NIST AI RMF Playbook", href: "https://airc.nist.gov/airmf-resources/playbook/", type: "FRAMEWORK" },
+      { label: "Fairlearn quickstart", href: "https://fairlearn.org/", type: "MEASURE" },
+      { label: "Responsible AI Toolbox", href: "https://responsibleaitoolbox.ai/", type: "TOOLS" },
+    ],
+  },
+];
+
 export function Explorer() {
   const [track, setTrack] = useState<Track>("Artificial Intelligence");
   const [career, setCareer] = useState(0);
@@ -113,6 +160,40 @@ export function Explorer() {
             <span>SMART BUSINESS TOOL</span>
             <span>RESPONSIBLE AI AUDIT</span>
           </div>
+        </div>
+        <div className="launchpad" id="projects">
+          <div className="launchpad-head">
+            <div>
+              <p className="section-kicker">PROJECT LAUNCHPAD</p>
+              <h3>Start before you feel ready.</h3>
+            </div>
+            <p>Pick a mission, follow a trusted starting point, and turn what you learn into something you can demonstrate.</p>
+          </div>
+          <div className="project-grid">
+            {projectLaunchpads.map((project) => (
+              <article className="project-card" key={project.title}>
+                <div className="project-title">
+                  <span>{project.number}</span>
+                  <h4>{project.title}</h4>
+                </div>
+                <p>{project.mission}</p>
+                <div className="project-target">
+                  <small>FIRST FINISH LINE</small>
+                  <strong>{project.deliverable}</strong>
+                </div>
+                <div className="resource-list">
+                  {project.resources.map((resource) => (
+                    <a key={resource.href} href={resource.href} target="_blank" rel="noreferrer">
+                      <small>{resource.type}</small>
+                      <span>{resource.label}</span>
+                      <b aria-hidden="true">↗</b>
+                    </a>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+          <p className="portfolio-finish"><span>PORTFOLIO SIGNAL</span> Finish with a working demo, a public GitHub repository, a 90-second walkthrough, and a one-page reflection on what you learned.</p>
         </div>
       </section>
 
