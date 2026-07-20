@@ -79,16 +79,3 @@ short-lived Pages identity token.
 
 When catalog requirements change, update both the displayed totals and the
 individual course data, then run `npm test` before publishing.
-
-## Repository privacy
-
-This repository is public. Do not commit:
-
-- `.env` files
-- API keys, tokens, or passwords
-- private student information
-- unpublished institutional documents
-- local deployment archives
-
-The portrait, faculty credentials, university email address, and AI Bison
-artwork are intentionally included as public website content.
