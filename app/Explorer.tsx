@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type MouseEvent } from "react";
 
 type Track = "Software" | "Artificial Intelligence" | "Mathematics";
 
@@ -92,6 +92,17 @@ export function Explorer() {
   const [career, setCareer] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const total = useMemo(() => courses[track].reduce((sum, c) => sum + c.hours, 0), [track]);
+  const jumpTo = (id: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    const target = document.getElementById(id);
+    if (!target) return;
+    const headerOffset = 108;
+    const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top: Math.max(0, top), behavior: "auto" });
+    window.history.replaceState(window.history.state, "", `${window.location.pathname}${window.location.search}`);
+    setMenuOpen(false);
+  };
 
   return (
     <main>
@@ -99,17 +110,17 @@ export function Explorer() {
       <div className="ambient ambient-two" />
 
       <header className="nav shell">
-        <a className="brand" href="#top" aria-label="Harding AI home" onClick={() => setMenuOpen(false)}>
+        <a className="brand" href="#top" aria-label="Harding AI home" onClick={jumpTo("top")}>
           <img src="./ai-bison.jpg" alt="Harding AI Bison" width="68" height="48" />
           <span><b>HARDING</b><small>ARTIFICIAL INTELLIGENCE</small></span>
         </a>
         <button className="menu" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen}>MENU</button>
         <nav className={menuOpen ? "navlinks open" : "navlinks"} aria-label="Main navigation">
-          <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
-          <a href="#curriculum" onClick={() => setMenuOpen(false)}>Curriculum</a>
-          <a href="#careers" onClick={() => setMenuOpen(false)}>Careers</a>
-          <a href="#guide" onClick={() => setMenuOpen(false)}>Your guide</a>
-          <a className="nav-cta" href="#launch" onClick={() => setMenuOpen(false)}>Start exploring <span>↗</span></a>
+          <a href="#projects" onClick={jumpTo("projects")}>Projects</a>
+          <a href="#curriculum" onClick={jumpTo("curriculum")}>Curriculum</a>
+          <a href="#careers" onClick={jumpTo("careers")}>Careers</a>
+          <a href="#guide" onClick={jumpTo("guide")}>Your guide</a>
+          <a className="nav-cta" href="#launch" onClick={jumpTo("launch")}>Start exploring <span>↗</span></a>
         </nav>
       </header>
 
@@ -119,8 +130,8 @@ export function Explorer() {
           <h1>Build what’s <em>next.</em></h1>
           <p className="lead">Master the science behind intelligent systems—and learn to create technology with skill, purpose, and conviction.</p>
           <div className="hero-actions">
-            <a className="primary" href="#curriculum">Explore the degree <span>↓</span></a>
-            <a className="text-link" href="#careers">See where AI can take you <span>→</span></a>
+            <a className="primary" href="#curriculum" onClick={jumpTo("curriculum")}>Explore the degree <span>↓</span></a>
+            <a className="text-link" href="#careers" onClick={jumpTo("careers")}>See where AI can take you <span>→</span></a>
           </div>
           <div className="proof">
             <div><strong>124</strong><span>Total degree<br />hours</span></div>
