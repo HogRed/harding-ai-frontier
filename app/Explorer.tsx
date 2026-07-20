@@ -99,16 +99,17 @@ export function Explorer() {
       <div className="ambient ambient-two" />
 
       <header className="nav shell">
-        <a className="brand" href="#top" aria-label="Harding AI home">
+        <a className="brand" href="#top" aria-label="Harding AI home" onClick={() => setMenuOpen(false)}>
           <img src="./ai-bison.jpg" alt="Harding AI Bison" width="68" height="48" />
           <span><b>HARDING</b><small>ARTIFICIAL INTELLIGENCE</small></span>
         </a>
         <button className="menu" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen}>MENU</button>
         <nav className={menuOpen ? "navlinks open" : "navlinks"} aria-label="Main navigation">
-          <a href="#curriculum">Curriculum</a>
-          <a href="#careers">Careers</a>
-          <a href="#guide">Your guide</a>
-          <a className="nav-cta" href="#launch">Start exploring <span>↗</span></a>
+          <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
+          <a href="#curriculum" onClick={() => setMenuOpen(false)}>Curriculum</a>
+          <a href="#careers" onClick={() => setMenuOpen(false)}>Careers</a>
+          <a href="#guide" onClick={() => setMenuOpen(false)}>Your guide</a>
+          <a className="nav-cta" href="#launch" onClick={() => setMenuOpen(false)}>Start exploring <span>↗</span></a>
         </nav>
       </header>
 
