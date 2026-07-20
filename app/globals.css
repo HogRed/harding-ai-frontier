@@ -12,7 +12,8 @@ section[id],.launchpad[id] { scroll-margin-top:108px; }
 .ambient { position:absolute; border-radius:50%; filter:blur(110px); pointer-events:none; opacity:.16; }
 .ambient-one { width:520px;height:520px;background:#04cce8;top:110px;right:-260px; }
 .ambient-two { width:380px;height:380px;background:#1647ff;top:760px;left:-240px; }
-.nav { height:92px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:20; border-bottom:1px solid #ffffff17; background:#061121e8; backdrop-filter:blur(18px);box-shadow:0 0 0 100vmax #061121e8;clip-path:inset(0 -100vmax); }
+.nav { height:92px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:20; border-bottom:1px solid #ffffff17; }
+.nav:before { content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:#061121e8;backdrop-filter:blur(18px); }
 .brand { display:flex; align-items:center; gap:13px; }
 .brand img { width:60px;height:42px;object-fit:contain;background:white;border-radius:6px; }
 .brand span { display:flex;flex-direction:column;line-height:1; }
