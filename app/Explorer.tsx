@@ -58,7 +58,7 @@ const projectLaunchpads = [
     mission: "Create a course assistant that answers from approved notes, cites its sources, and knows when to say it does not know.",
     deliverable: "Working chat + cited answers + evaluation questions",
     resources: [
-      { label: "OpenAI developer quickstart", href: "https://platform.openai.com/docs/quickstart/make-your-first-api-request", type: "BUILD" },
+      { label: "OpenAI developer quickstart", href: "https://developers.openai.com/api/docs/quickstart", type: "BUILD" },
       { label: "Streamlit chat app tutorial", href: "https://docs.streamlit.io/develop/tutorials/chat-and-llm-apps/build-conversational-apps", type: "UI" },
       { label: "Streamlit LLM quickstart", href: "https://docs.streamlit.io/develop/tutorials/chat-and-llm-apps/llm-quickstart", type: "EXTEND" },
     ],
@@ -82,7 +82,7 @@ const projectLaunchpads = [
     resources: [
       { label: "NIST AI RMF Playbook", href: "https://airc.nist.gov/airmf-resources/playbook/", type: "FRAMEWORK" },
       { label: "Fairlearn quickstart", href: "https://fairlearn.org/", type: "MEASURE" },
-      { label: "Responsible AI Toolbox", href: "https://responsibleaitoolbox.ai/", type: "TOOLS" },
+      { label: "Google ML fairness course", href: "https://developers.google.com/machine-learning/crash-course/fairness", type: "LEARN" },
     ],
   },
 ];
